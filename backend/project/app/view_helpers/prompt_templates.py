@@ -89,7 +89,9 @@ def process_image():
             Provide a detailed description of the image based on its relevance to a given context.
 
             User's initial context: '{context}'
-     
+            
+            If the user's initial context is unclear or inappropriate, output an empty string.
+            
             If the image is relevant to the context, provide a detailed description.
             If the image is not relevant, output an empty string.
     """
@@ -107,7 +109,7 @@ def refine_context():
             Instructions:
             1. If the user's initial context is unclear or inappropriate, 
             use the default context: "Discuss with a friend about how your day has been."
-            2. Incorporate any relevant details from the image description to enrich the context, if provided.
+            2. You may incorporate relevant details from the image description only if it helps to enrich the context.
             3. Reframe the context into a coherent and specific objective task. 
             Avoid any special formatting in your response.
         
